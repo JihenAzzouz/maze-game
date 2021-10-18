@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <title>Maze Game</title>
+    <link href="../CSS/bootstrap.min.css" rel="stylesheet">
+    <link href="../CSS/main.css" rel="stylesheet">
+</head>
+
+<body class="tm-gray-bg">
+<div class="tm-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-4 col-sm-3 tm-site-name-container">
+                    <a href="#" class="tm-site-name">Maze Game</a>    
+                </div>
+                <div class="col-lg-6 col-md-8 col-sm-9">
+                    <div class="mobile-menu-icon">
+                      <i class="fa fa-bars"></i>
+                    </div>
+                    <nav class="tm-nav">
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            
+                        </ul>
+                    </nav>      
+                </div>              
+            </div>
+        </div>      
+    </div>
+<section class="align-items-center">
+    <div class ='h1'>
+       <h1> Find <span class="tm-yellow-text">The <img src="../img/path.png" id="tm-img"></span></h1>
+    </div>
+</section>  
+<br>
+<section class="align-items-center">
+    <div class="col-md-3"></div>
+    <div class ='col-md-4'>
+        <div class="tm-text">Find the way out in 45 seconds!</div>
+        <div id="timerel"></div>
+    </div>
+
+</section>  
+
+<section class="container tm-home-section-1">
+       
+        <div>
+            
+                <br><br>
+                <canvas id="canvas" width="775" height="500" class="canva-15x15">
+                     This text is displayed if your browser does not support HTML5 Canvas.
+                </canvas>
+        </div>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2 class="gamehead"></h2>
+                </div>
+                <div class="modal-footer">
+                    <h2 id="demo" onmouseover="" style="cursor:pointer;">Play Again?</h2>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    
+    <script src="../JS/main.js"></script>
+    <script type="text/javascript">
+        m = new maze(15 , 15 , 29 , 30);
+        m.init();
+        m.add_edges();
+        m.gen_maze();
+        m.draw_canvas("canvas");
+    </script>
+</section>
+</body>
+</html>
